@@ -1,0 +1,79 @@
+﻿<Window x:Class="MotelDecktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MotelDecktopApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="Guest">
+            <Grid>
+                <ListView x:Name="guestListView" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="GuestId" DisplayMemberBinding="{Binding GuestId}" />
+                            <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding FirstName}" />
+                            <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <StackPanel Margin="10" VerticalAlignment="Bottom">
+                    <TextBox x:Name="txtFirstName" Margin="0,0,0,5" Text="First Name" />
+                    <TextBox x:Name="txtLastName" Margin="0,0,0,5" Text="Last Name" />
+                    <Button Content="Add Guest" Click="btnAddGuest_Click" />
+                    <Button Content="Update Guest" Click="btnUpdateGuest_Click" />
+                    <Button Content="Delete Guest" Click="btnDeleteGuest_Click" />
+                </StackPanel>
+
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Rooms">
+            <Grid>
+                <ListView x:Name="roomListView" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="RoomId" DisplayMemberBinding="{Binding RoomId}" />
+                            <GridViewColumn Header="RoomNumber" DisplayMemberBinding="{Binding RoomNumber}" />
+                            
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <StackPanel Margin="10" VerticalAlignment="Bottom">
+                    <TextBox x:Name="txtRoomNumber" Margin="0,0,0,5" Text="Room number" />
+
+                    <Button Content="Add Room" Click="btnAddRoom_Click" />
+                    <Button Content="Update Room" Click="btnUpdateRoom_Click" />
+                    <Button Content="Delete Room" Click="btnDeleteRoom_Click" />
+                </StackPanel>
+
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="GuestRooms">
+            <Grid>
+                <ListView x:Name="guestRoomListView" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="GuestRoomId" DisplayMemberBinding="{Binding GuestRoomId}" />
+                            <GridViewColumn Header="GuestFirstName" DisplayMemberBinding="{Binding GuestFirstName}" />
+                            <GridViewColumn Header="GuestLastName" DisplayMemberBinding="{Binding GuestLastName}" />
+                            <GridViewColumn Header="RoomNumber" DisplayMemberBinding="{Binding RoomNumber}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <StackPanel Margin="10" VerticalAlignment="Bottom">
+                    <!-- Ваши другие элементы интерфейса -->
+                    <Button Content="Add GuestRooms" Click="btnAddGuestRoom_Click" />
+                    <Button Content="Delete GuestRooms" Click="btnDeleteGuestRoom_Click" />
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+    </TabControl>
+</Window>
